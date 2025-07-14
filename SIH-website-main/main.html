@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alumni Association Platform</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Government Engineering College Alumni Association</h1>
+
+        <p>
+          Stay connected, explore opportunities, and contribute to our growth.
+        </p>
+
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#registration">Registration</a></li>
+            <li><a href="#donation">Donations</a></li>
+            <li><a href="#networking">Networking</a></li>
+            <li><a href="#job-portal">Job Portal</a></li>
+            <li><a href="#directory">Directory</a></li>
+            <li><a href="#success-stories">Success Stories</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="home" class="section-home">
+      <div class="container">
+        <h2>Welcome Alumni!</h2>
+        <p>
+          Welcome to the official platform of the Government Engineering College
+          Alumni Association. Stay connected with your alma mater and fellow
+          alumni. Explore opportunities, contribute to our growth, and keep the
+          spirit alive!
+        </p>
+        <p>
+          Stay connected with your alma mater and fellow alumni. Explore
+          opportunities, contribute to our growth, and keep the spirit alive!
+        </p>
+      </div>
+    </section>
+
+    <section id="registration" class="section-registration">
+      <div class="container">
+        <h2>Alumni Registration</h2>
+        <form id="registrationForm">
+          <div class="form-group">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required />
+          </div>
+          <div class="form-group">
+            <label for="graduationYear">Graduation Year:</label>
+            <input type="number" id="graduationYear" required />
+          </div>
+          <div class="form-group">
+            <label for="profession">Profession:</label>
+            <input type="text" id="profession" required />
+          </div>
+          <button type="submit" class="btn-primary">Register</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="donation" class="section-donation">
+      <div class="container">
+        <h2>Donation Portal</h2>
+        <p>
+          Your contributions make a difference. Support our initiatives and
+          projects by making a donation.
+        </p>
+        <form id="donationForm">
+          <div class="form-group">
+            <label for="donorName">Name:</label>
+            <input type="text" id="donorName" required />
+          </div>
+          <div class="form-group">
+            <label for="donationAmount">Amount:</label>
+            <input type="number" id="donationAmount" required />
+          </div>
+          <button type="submit" class="btn-primary">Donate Now</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="networking" class="section-networking">
+      <div class="container">
+        <h2>Networking Hub</h2>
+        <p>
+          Connect with fellow alumni based on shared interests and professions.
+          Expand your network and explore new opportunities.
+        </p>
+        <div class="networking-list">
+          <div class="networking-item">
+            <h3>Join Professional Groups</h3>
+            <p>
+              Engage in discussions and collaborate with alumni in your field.
+            </p>
+          </div>
+          <div class="networking-item">
+            <h3>Find a Mentor</h3>
+            <p>
+              Get guidance and advice from experienced alumni in your
+              profession.
+            </p>
+          </div>
+          <div class="networking-item">
+            <h3>Share Opportunities</h3>
+            <p>Post and discover career opportunities within our network.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="job-portal" class="section-job-portal">
+      <div class="container">
+        <h2>Job Portal</h2>
+        <p>
+          Explore job postings or share opportunities within our alumni network.
+        </p>
+        <form id="jobPostForm">
+          <div class="form-group">
+            <label for="jobTitle">Job Title:</label>
+            <input type="text" id="jobTitle" required />
+          </div>
+          <div class="form-group">
+            <label for="jobDescription">Job Description:</label>
+            <textarea id="jobDescription" rows="4" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="jobLocation">Location:</label>
+            <input type="text" id="jobLocation" required />
+          </div>
+          <button type="submit" class="btn-primary">Post Job</button>
+        </form>
+        <div class="job-list">
+          <!-- Job postings will be dynamically added here -->
+        </div>
+      </div>
+    </section>
+
+    <section id="directory" class="section-directory">
+      <div class="container">
+        <h2>Alumni Directory</h2>
+        <p>
+          Search for alumni based on various criteria to reconnect and network.
+        </p>
+        <form id="directorySearchForm">
+          <div class="form-group">
+            <label for="searchName">Name:</label>
+            <input type="text" id="searchName" />
+          </div>
+          <div class="form-group">
+            <label for="searchYear">Graduation Year:</label>
+            <input type="number" id="searchYear" />
+          </div>
+          <div class="form-group">
+            <label for="searchProfession">Profession:</label>
+            <input type="text" id="searchProfession" />
+          </div>
+          <button type="submit" class="btn-primary">Search</button>
+        </form>
+        <div class="directory-results">
+          <!-- Search results will be dynamically displayed here -->
+        </div>
+      </div>
+    </section>
+
+    <section id="success-stories" class="section-success-stories">
+      <div class="container">
+        <h2>Success Stories</h2>
+        <p>
+          Read about the achievements and contributions of our notable alumni.
+        </p>
+        <div class="success-stories-list">
+          <!-- Success stories will be dynamically added here -->
+        </div>
+      </div>
+    </section>
+
+    <section id="events" class="section-events">
+      <div class="container">
+        <h2>Events and Reunions</h2>
+        <p>Stay updated on upcoming events, reunions, and workshops.</p>
+        <div class="event-list">
+          <!-- Events will be dynamically displayed here -->
+        </div>
+      </div>
+    </section>
+
+    <section id="feedback" class="section-feedback">
+      <div class="container">
+        <h2>Feedback and Surveys</h2>
+        <form id="feedbackForm">
+          <div class="form-group">
+            <label for="feedbackName">Name:</label>
+            <input type="text" id="feedbackName" required />
+          </div>
+          <div class="form-group">
+            <label for="feedbackEmail">Email:</label>
+            <input type="email" id="feedbackEmail" required />
+          </div>
+          <div class="form-group">
+            <label for="feedbackMessage">Message:</label>
+            <textarea id="feedbackMessage" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Submit Feedback</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2024 Government Engineering College Alumni Association. All
+          rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+<style>
+
+    
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+
+}
+
+/* Header */
+header {
+    background-color: #003366;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    margin-bottom: 20px;
+}
+
+.section-home {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+}
+
+.section-registration, .section-donation, .section-networking, .section-job-portal, .section-directory, .section-success-stories, .section-events, .section-feedback {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.section-registration form, .section-donation form, .section-job-portal form, .section-directory form, .section-feedback form {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #c36a6a;
+
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+}
+
+/* Networking Hub */
+.networking-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.networking-item {
+    background-color: #e5e5e5;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    width: 30%;
+}
+
+/* Job Portal */
+.job-list, .directory-results, .success-stories-list, .event-list {
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+</style>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Handle form submissions
+    document.getElementById("registrationForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        alert("Registration successful!");
+    });
+
+    document.getElementById("donationForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        alert("Thank you for your donation!");
+    });
+
+    document.getElementById("jobPostForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const jobTitle = document.getElementById("jobTitle").value;
+        const jobDescription = document.getElementById("jobDescription").value;
+        const jobLocation = document.getElementById("jobLocation").value;
+
+        const jobPost = `<div class="job-item">
+            <h3>${jobTitle}</h3>
+            <p>${jobDescription}</p>
+            <p><strong>Location:</strong> ${jobLocation}</p>
+        </div>`;
+
+        document.querySelector(".job-list").innerHTML += jobPost;
+        document.getElementById("jobPostForm").reset();
+        alert("Job posted successfully!");
+    });
+
+    document.getElementById("directorySearchForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const name = document.getElementById("searchName").value;
+        const year = document.getElementById("searchYear").value;
+        const profession = document.getElementById("searchProfession").value;
+
+        const result = `<div class="directory-item">
+            <h3>${name}</h3>
+            <p><strong>Graduation Year:</strong> ${year}</p>
+            <p><strong>Profession:</strong> ${profession}</p>
+        </div>`;
+
+        document.querySelector(".directory-results").innerHTML += result;
+    });
+
+    document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        alert("Feedback submitted. Thank you!");
+    });
+});
+</script>

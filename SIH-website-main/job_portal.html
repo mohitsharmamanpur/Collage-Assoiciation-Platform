@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Opportunities</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Discover Your Future</h1>
+            <p>Explore a wide range of job and internship opportunities tailored for students and alumni, with resources to enhance your career journey.</p>
+        </div>
+    </header>
+    
+    <section id="opportunities">
+        <div class="container">
+            <h2>Career Opportunities</h2>
+            <div class="dropdown-container">
+                <label for="category">Select Category:</label>
+                <select id="category" onchange="filterOpportunities()">
+                    <option value="students">College Students</option>
+                    <option value="alumni">Alumni</option>
+                </select>
+            </div>
+            <div id="opportunity-cards" class="cards">
+                <!-- Cards will be injected here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Career Pathways. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 10px 0 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+section#opportunities {
+    padding: 40px 0;
+    background-color: #f4f4f4;
+}
+
+section#opportunities h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+.dropdown-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dropdown-container label {
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.dropdown-container select {
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 30%;
+    margin: 10px 0;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card h3 {
+    margin: 0;
+    color: #007BFF;
+}
+
+.card p {
+    font-size: 1em;
+    color: #555;
+}
+
+.card ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 0.9em;
+    text-align: left;
+    margin: 15px 0;
+}
+
+.card li {
+    margin-bottom: 10px;
+}
+
+.card button {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* hovering effect */
+/* Base styling for body and overall layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    transition: color 0.3s, transform 0.3s;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 10px 0 0;
+}
+
+/* Container styling for main content */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Styling for opportunities section */
+section#opportunities {
+    padding: 40px 0;
+    background-color: #f4f4f4;
+}
+
+section#opportunities h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007BFF;
+    transition: color 0.3s, transform 0.3s;
+}
+
+/* Dropdown container styling */
+.dropdown-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dropdown-container label {
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.dropdown-container select {
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Card layout styling */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 30%;
+    margin: 10px 0;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card h3 {
+    margin: 0;
+    color: #007BFF;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.card p {
+    font-size: 1em;
+    color: #555;
+}
+
+.card ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 0.9em;
+    text-align: left;
+    margin: 15px 0;
+}
+
+.card li {
+    margin-bottom: 10px;
+}
+
+.card button {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer styling */
+footer {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Hover effects for all headings */
+h1:hover,
+h2:hover,
+h3:hover {
+    color: #0056b3; /* Change text color on hover */
+    cursor: pointer;
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+/* Advanced hover effects for main heading in header */
+header h1:hover {
+    color: #FFD700; /* Change color on hover */
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8); /* Add glowing effect */
+    transform: scale(1.1); /* Further increase size on hover */
+}
+
+
+</style>
+
+<script>
+const opportunities = {
+    students: [
+        {
+            title: "Software Engineering Internship",
+            description: "Join our tech team to work on cutting-edge projects. Ideal for Computer Science majors with a passion for coding.",
+            location: "San Francisco, CA",
+            duration: "3 months",
+            requirements: "Proficiency in Python or Java"
+        },
+        {
+            title: "Marketing Specialist",
+            description: "Help develop marketing strategies and execute campaigns. Perfect for business students with creative ideas.",
+            location: "New York, NY",
+            duration: "Full-time",
+            requirements: "Experience with digital marketing tools"
+        },
+        {
+            title: "Graphic Designer Intern",
+            description: "Create visual content for marketing materials. Ideal for students with a strong portfolio in graphic design.",
+            location: "Los Angeles, CA",
+            duration: "4 months",
+            requirements: "Proficiency in Adobe Creative Suite"
+        }
+    ],
+    alumni: [
+        {
+            title: "Data Analyst",
+            description: "Analyze data to provide actionable insights. Perfect for those with strong quantitative skills.",
+            location: "Chicago, IL",
+            duration: "Full-time",
+            requirements: "Experience with SQL and data visualization tools"
+        },
+        {
+            title: "Human Resources Intern",
+            description: "Assist with HR functions such as recruitment and employee engagement. Suitable for those interested in HR careers.",
+            location: "Austin, TX",
+            duration: "3 months",
+            requirements: "Strong communication skills"
+        },
+        {
+            title: "Research Assistant",
+            description: "Assist in conducting important research in various fields. Great for those looking to pursue academic careers.",
+            location: "Boston, MA",
+            duration: "6 months",
+            requirements: "Strong analytical skills"
+        }
+    ]
+};
+
+function filterOpportunities() {
+    const category = document.getElementById('category').value;
+    const container = document.getElementById('opportunity-cards');
+    container.innerHTML = '';
+
+    opportunities[category].forEach(opportunity => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <h3>${opportunity.title}</h3>
+            <p>${opportunity.description}</p>
+            <ul>
+                <li><strong>Location:</strong> ${opportunity.location}</li>
+                <li><strong>Duration:</strong> ${opportunity.duration}</li>
+                <li><strong>Requirements:</strong> ${opportunity.requirements}</li>
+            </ul>
+            <button onclick="apply('${opportunity.title}')">Apply Now</button>
+        `;
+        container.appendChild(card);
+    });
+}
+
+// Initial load
+document.addEventListener('DOMContentLoaded', filterOpportunities);
+
+function apply(opportunity) {
+    alert(`Thank you for your interest in the ${opportunity} position!`);
+}
+
+</script>

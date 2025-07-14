@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Directory</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            transition: color 0.3s, transform 0.3s;
+        }
+        header h1:hover {
+            color: #ffe600;
+            transform: scale(1.05);
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .search-bar {
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .search-bar input, .search-bar select {
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s;
+        }
+        .search-bar input:focus, .search-bar select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        .directory-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .directory-table th, .directory-table td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .directory-table th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+        .directory-table th:hover {
+            background-color: #0056b3;
+        }
+        .directory-table td {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .directory-table tr:hover td {
+            background-color: #f1f5f9;
+            transform: translateY(-2px);
+        }
+        .directory-table td, .directory-table th {
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Alumni Directory</h1>
+    </header>
+
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search by name...">
+            <select id="yearFilter">
+                <option value="">Graduation Year</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+            </select>
+            <select id="industryFilter">
+                <option value="">Industry</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Finance">Finance</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Education">Education</option>
+            </select>
+            <select id="locationFilter">
+                <option value="">Location</option>
+                <option value="New York">New York</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Houston">Houston</option>
+                <option value="San Francisco">San Francisco</option>
+            </select>
+            <select id="sortBy">
+                <option value="name">Sort by Name</option>
+                <option value="year">Sort by Year</option>
+            </select>
+        </div>
+
+        <table class="directory-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Graduation Year</th>
+                    <th>Industry</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody id="directoryBody">
+                <!-- Directory entries will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Sample data for 20 students
+        const alumni = [
+            { name: 'Alice Johnson', year: '2020', industry: 'Engineering', location: 'New York' },
+            { name: 'Bob Smith', year: '2019', industry: 'Marketing', location: 'Los Angeles' },
+            { name: 'Charlie Davis', year: '2018', industry: 'Finance', location: 'Chicago' },
+            { name: 'Diana Evans', year: '2017', industry: 'Healthcare', location: 'Houston' },
+            { name: 'Ethan Brown', year: '2020', industry: 'Education', location: 'San Francisco' },
+            { name: 'Fiona Wilson', year: '2019', industry: 'Engineering', location: 'New York' },
+            { name: 'George Martinez', year: '2018', industry: 'Marketing', location: 'Los Angeles' },
+            { name: 'Hannah Lee', year: '2017', industry: 'Finance', location: 'Chicago' },
+            { name: 'Isaac Harris', year: '2016', industry: 'Healthcare', location: 'Houston' },
+            { name: 'Jessica Young', year: '2020', industry: 'Education', location: 'San Francisco' },
+            { name: 'Kevin Walker', year: '2019', industry: 'Engineering', location: 'New York' },
+            { name: 'Laura Scott', year: '2018', industry: 'Marketing', location: 'Los Angeles' },
+            { name: 'Michael Robinson', year: '2017', industry: 'Finance', location: 'Chicago' },
+            { name: 'Nina Adams', year: '2016', industry: 'Healthcare', location: 'Houston' },
+            { name: 'Oscar Green', year: '2020', industry: 'Education', location: 'San Francisco' },
+            { name: 'Paula White', year: '2019', industry: 'Engineering', location: 'New York' },
+            { name: 'Quincy Lewis', year: '2018', industry: 'Marketing', location: 'Los Angeles' },
+            { name: 'Rachel Clark', year: '2017', industry: 'Finance', location: 'Chicago' },
+            { name: 'Samuel King', year: '2016', industry: 'Healthcare', location: 'Houston' },
+            { name: 'Tina Robinson', year: '2020', industry: 'Education', location: 'San Francisco' },
+            { name: 'Ulysses Allen', year: '2019', industry: 'Engineering', location: 'New York' }
+        ];
+
+        function renderTable(data) {
+            const tbody = document.getElementById('directoryBody');
+            tbody.innerHTML = ''; // Clear existing rows
+            data.forEach(alumnus => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${alumnus.name}</td>
+                    <td>${alumnus.year}</td>
+                    <td>${alumnus.industry}</td>
+                    <td>${alumnus.location}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function filterAndSort() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const yearFilter = document.getElementById('yearFilter').value;
+            const industryFilter = document.getElementById('industryFilter').value;
+            const locationFilter = document.getElementById('locationFilter').value;
+            const sortBy = document.getElementById('sortBy').value;
+
+            let filteredData = alumni.filter(alumnus => {
+                return (alumnus.name.toLowerCase().includes(searchInput) &&
+                        (!yearFilter || alumnus.year === yearFilter) &&
+                        (!industryFilter || alumnus.industry === industryFilter) &&
+                        (!locationFilter || alumnus.location === locationFilter));
+            });
+
+            if (sortBy === 'name') {
+                filteredData.sort((a, b) => a.name.localeCompare(b.name));
+            } else if (sortBy === 'year') {
+                filteredData.sort((a, b) => a.year.localeCompare(b.year));
+            }
+
+            renderTable(filteredData);
+        }
+
+        document.getElementById('searchInput').addEventListener('input', filterAndSort);
+        document.getElementById('yearFilter').addEventListener('change', filterAndSort);
+        document.getElementById('industryFilter').addEventListener('change', filterAndSort);
+        document.getElementById('locationFilter').addEventListener('change', filterAndSort);
+        document.getElementById('sortBy').addEventListener('change', filterAndSort);
+
+        // Initial render
+        renderTable(alumni);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alumni Events & Reunions</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      color: #333;
+      scroll-behavior: smooth; /* Enables smooth scrolling */
+    }
+    header {
+      background-color: #004d99;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.1);
+      z-index: 0;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      z-index: 1;
+    }
+    header p {
+      margin: 10px 0 0;
+      font-size: 1.2em;
+      z-index: 1;
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #003366;
+      padding: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .tabs button {
+      background-color: #004d99;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .tabs button.active {
+      background-color: #003366;
+    }
+    .tabs button:hover {
+      background-color: #002244;
+      transform: scale(1.05);
+    }
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .section {
+      background: white;
+      margin-bottom: 20px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      display: none;
+    }
+    .section.active {
+      display: block;
+    }
+    .section:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transform: translateY(-5px);
+    }
+    h2 {
+      color: #004d99;
+      font-size: 2em;
+      margin-bottom: 20px;
+      text-align: center;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: #004d99;
+      margin: 10px auto;
+      border-radius: 2px;
+    }
+    p {
+      text-align: center;
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+    .event, .reunion {
+      margin-bottom: 20px;
+    }
+    .event-item, .reunion-item {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+    .event-item:last-child, .reunion-item:last-child {
+      border-bottom: none;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+    }
+    .contact-form input, .contact-form textarea {
+      margin-bottom: 10px;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1em;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    }
+    .contact-form button {
+      background-color: #004d99;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .contact-form button:hover {
+      background-color: #003366;
+      transform: scale(1.02);
+    }
+    @media (max-width: 768px) {
+      .container {
+        width: 90%;
+      }
+      .tabs {
+        flex-direction: column;
+      }
+      .tabs button {
+        padding: 10px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Alumni Events & Reunions</h1>
+    <p>Welcome to the alumni network page. Stay updated with upcoming events and reunions!</p>
+  </header>
+  <div class="tabs">
+    <button class="tab-button" data-target="events">Upcoming Events</button>
+    <button class="tab-button" data-target="reunions">Reunions</button>
+    <button class="tab-button" data-target="contact">Contact Us</button>
+  </div>
+  <div class="container">
+    <section id="events" class="section">
+      <h2>Upcoming Events</h2>
+      <div class="event">
+        <div class="event-item">
+          <h3>Annual Alumni Dinner</h3>
+          <p>Date: September 15, 2024</p>
+          <p>Location: Grand Hall, College Campus</p>
+          <p>Description: Join us for our annual dinner where alumni can reconnect and network.</p>
+        </div>
+        <div class="event-item">
+          <h3>Homecoming Weekend</h3>
+          <p>Date: October 21-23, 2024</p>
+          <p>Location: Various locations on campus</p>
+          <p>Description: A weekend of fun activities, including a football game, campus tours, and social events.</p>
+        </div>
+      </div>
+    </section>
+    <section id="reunions" class="section">
+      <h2>Reunions</h2>
+      <div class="reunion">
+        <div class="reunion-item">
+          <h3>Class of 2000 Reunion</h3>
+          <p>Date: November 5, 2024</p>
+          <p>Location: Alumni Center</p>
+          <p>Description: A special gathering for the Class of 2000 to celebrate 24 years since graduation.</p>
+        </div>
+        <div class="reunion-item">
+          <h3>Engineering Alumni Reunion</h3>
+          <p>Date: December 10, 2024</p>
+          <p>Location: Engineering Department Hall</p>
+          <p>Description: An event dedicated to reconnecting with former classmates from the engineering program.</p>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="section">
+      <h2>Contact Us</h2>
+      <form class="contact-form" action="#" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="phone" placeholder="Your Phone Number">
+        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabs = document.querySelectorAll('.tab-button');
+      const sections = document.querySelectorAll('.section');
+      
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const targetId = tab.getAttribute('data-target');
+          
+          // Hide all sections and remove active class from all tabs
+          sections.forEach(section => section.classList.remove('active'));
+          tabs.forEach(t => t.classList.remove('active'));
+          
+          // Show the clicked section and add active class to the clicked tab
+          document.getElementById(targetId).classList.add('active');
+          tab.classList.add('active');
+        });
+      });
+      
+      // Default to the first tab
+      if (tabs.length > 0) {
+        tabs[0].click();
+      }
+    });
+  </script>
+</body>
+</html>

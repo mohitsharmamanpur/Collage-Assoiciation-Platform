@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      background-image: url("donation background.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .section-donation {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 1200px;
+      margin: 20px auto;
+      border: 1px solid #ddd;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section-donation:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      transform: scale(1.01);
+    }
+
+    h2 {
+      color: #007bff;
+      text-align: center;
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    h2:hover {
+      color: #0056b3;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    p {
+      text-align: center;
+      font-size: 1em;
+      margin-bottom: 15px;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .form-group {
+      flex: 1 1 calc(50% - 20px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group.wide {
+      flex: 1 1 100%;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 0.9em;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input[type="text"]:hover,
+    input[type="email"]:hover,
+    input[type="tel"]:hover,
+    input[type="number"]:hover,
+    textarea:hover,
+    select:hover {
+      border-color: #0056b3;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="number"]:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 6px rgba(0, 123, 255, 0.2);
+    }
+
+    button.btn-primary {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button.btn-primary:hover {
+      background-color: #0056b3;
+      transform: scale(1.01);
+    }
+
+    .error {
+      color: red;
+      font-size: 13px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .payment-methods {
+      margin-top: 15px;
+      padding-top: 10px;
+      border-top: 1px solid #ddd;
+    }
+
+    .payment-methods p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .payment-methods label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 0.9em;
+    }
+
+    .payment-methods input[type="radio"] {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <section id="donation" class="section-donation">
+    <div class="container">
+      <h2>Donation Portal</h2>
+      <p>Your contributions make a difference. Support our initiatives and projects by making a donation.</p>
+      <form id="donationForm">
+        <div class="form-group">
+          <label for="fullName">Full Name*</label>
+          <input type="text" id="fullName" placeholder="First Name Last Name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail*</label>
+          <input type="email" id="email" placeholder="myname@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number*</label>
+          <input type="tel" id="phoneNumber" placeholder="(000) 000-0000" required />
+        </div>
+        <div class="form-group">
+          <label for="donationType">Type of Donation*</label>
+          <select id="donationType" required>
+            <option value="">Select...</option>
+            <option value="one-time">One-time</option>
+            <option value="recurring">Recurring</option>
+          </select>
+        </div>
+        <div class="form-group wide">
+          <label for="comments">Comments*</label>
+          <textarea id="comments" placeholder="Your comments here" required></textarea>
+        </div>
+        <div class="form-group wide">
+          <label for="donationAmount">Donation Amount* (USD)</label>
+          <input type="number" id="donationAmount" placeholder="Please enter your donation amount" required />
+        </div>
+        <div class="payment-methods">
+          <p>Payment Methods</p>
+          <div>
+            <label>
+              <input type="radio" name="paymentMethod" value="paypal" required />
+              PayPal
+            </label>
+            <label>
+              <input type="radio" name="paymentMethod" value="creditCard" required />
+              Credit Card
+            </label>
+            <label>
+              <input type="radio" name="paymentMethod" value="bankTransfer" required />
+              Bank Transfer
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary">Submit</button>
+        <div id="errorMessage" class="error"></div>
+      </form>
+    </div>
+  </section>
+  <script>
+    document.getElementById('donationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      let fullName = document.getElementById('fullName').value;
+      let email = document.getElementById('email').value;
+      let phoneNumber = document.getElementById('phoneNumber').value;
+      let donationType = document.getElementById('donationType').value;
+      let comments = document.getElementById('comments').value;
+      let donationAmount = document.getElementById('donationAmount').value;
+      let paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+
+      if (fullName && email && phoneNumber && donationType && comments && donationAmount && paymentMethod) {
+        alert(`Thank you, ${fullName}! Your donation of $${donationAmount} has been received.`);
+        document.getElementById('donationForm').reset();
+      } else {
+        document.getElementById('errorMessage').textContent = 'Please fill in all required fields.';
+      }
+    });
+  </script>
+</body>
+</html>

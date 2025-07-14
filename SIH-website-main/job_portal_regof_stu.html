@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Student Application Form</h1>
+        </div>
+    </header>
+    
+    <section id="application-form">
+        <div class="container">
+            <form id="student-form">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required><br>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+                
+                <label for="major">Major:</label>
+                <input type="text" id="major" name="major" required><br>
+                
+                <label for="resume">Upload Resume:</label>
+                <input type="file" id="resume" name="resume" required><br>
+                
+                <button type="submit">Submit Application</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Career Pathways. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // You can add form submission handling here if needed
+    </script>
+</body>
+</html>
+
+<style>
+    /* General styles for body and layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Header styling */
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    transition: color 0.3s, transform 0.3s;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 10px 0 0;
+}
+
+/* Container styling */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Section styling for application form */
+section#application-form {
+    padding: 40px 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+section#application-form h1 {
+    text-align: center;
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="file"] {
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+form button {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer styling */
+footer {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* hovering effect */
+/* General styles for body and layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Header styling */
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 10px 0 0;
+}
+
+/* Container styling */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Section styling for application form */
+section#application-form {
+    padding: 40px 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+section#application-form h1 {
+    text-align: center;
+    color: #007BFF;
+    margin-bottom: 20px;
+    transition: color 0.3s, text-shadow 0.3s, transform 0.3s;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="file"] {
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+form button {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer styling */
+footer {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Hover effects for all headings */
+h1, h2, h3, h4, h5, h6 {
+    transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+    color: #0056b3;
+    transform: scale(1.05);
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* additional css */
+/* General styles for body and layout */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Header styling */
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    position: relative;
+}
+
+header::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 10px;
+    background: #0056b3;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Header heading and paragraph with transitions */
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    transition: color 0.4s, transform 0.4s;
+}
+
+header p {
+    font-size: 1.3em;
+    margin: 10px 0 0;
+    transition: color 0.4s;
+}
+
+header h1:hover {
+    color: #FFD700;
+    transform: scale(1.1);
+}
+
+header p:hover {
+    color: #d0eaff;
+}
+
+/* Container styling */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Section styling for application form */
+section#application-form {
+    padding: 50px 0;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+section#application-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 123, 255, 0.2), rgba(255, 193, 7, 0.2));
+    z-index: 0;
+    transition: all 0.4s;
+}
+
+section#application-form:hover::before {
+    width: 100%;
+}
+
+section#application-form h1 {
+    text-align: center;
+    color: #007BFF;
+    margin-bottom: 30px;
+    z-index: 1;
+    position: relative;
+    transition: color 0.4s, transform 0.4s;
+}
+
+section#application-form h1:hover {
+    color: #0056b3;
+    transform: scale(1.05);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+form label {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    color: #007BFF;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="file"] {
+    font-size: 1em;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+form button {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 15px;
+    font-size: 1.1em;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+form button:hover {
+    background-color: #0056b3;
+    transform: scale(1.02);
+}
+
+/* Footer styling */
+footer {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Hover effects for all headings */
+h1, h2, h3, h4, h5, h6 {
+    transition: color 0.4s, transform 0.4s, text-shadow 0.4s;
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+    color: #0056b3;
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* more and more css */
+/* Modal styling */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.modal h2 {
+    margin-top: 0;
+    color: #007BFF;
+}
+
+.modal .close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+
+</style>
+
+<script>
+    const opportunities = {
+    students: [
+        {
+            title: "Software Engineering Internship",
+            description: "Join our tech team to work on cutting-edge projects. Ideal for Computer Science majors with a passion for coding.",
+            location: "San Francisco, CA",
+            duration: "3 months",
+            requirements: "Proficiency in Python or Java"
+        },
+        {
+            title: "Marketing Specialist",
+            description: "Help develop marketing strategies and execute campaigns. Perfect for business students with creative ideas.",
+            location: "New York, NY",
+            duration: "Full-time",
+            requirements: "Experience with digital marketing tools"
+        },
+        {
+            title: "Graphic Designer Intern",
+            description: "Create visual content for marketing materials. Ideal for students with a strong portfolio in graphic design.",
+            location: "Los Angeles, CA",
+            duration: "4 months",
+            requirements: "Proficiency in Adobe Creative Suite"
+        }
+    ],
+    alumni: [
+        {
+            title: "Data Analyst",
+            description: "Analyze data to provide actionable insights. Perfect for those with strong quantitative skills.",
+            location: "Chicago, IL",
+            duration: "Full-time",
+            requirements: "Experience with SQL and data visualization tools"
+        },
+        {
+            title: "Human Resources Intern",
+            description: "Assist with HR functions such as recruitment and employee engagement. Suitable for those interested in HR careers.",
+            location: "Austin, TX",
+            duration: "3 months",
+            requirements: "Strong communication skills"
+        },
+        {
+            title: "Research Assistant",
+            description: "Assist in conducting important research in various fields. Great for those looking to pursue academic careers.",
+            location: "Boston, MA",
+            duration: "6 months",
+            requirements: "Strong analytical skills"
+        }
+    ]
+};
+
+function filterOpportunities() {
+    const category = document.getElementById('category').value;
+    const container = document.getElementById('opportunity-cards');
+    container.innerHTML = '';
+
+    opportunities[category].forEach(opportunity => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <h3>${opportunity.title}</h3>
+            <p>${opportunity.description}</p>
+            <ul>
+                <li><strong>Location:</strong> ${opportunity.location}</li>
+                <li><strong>Duration:</strong> ${opportunity.duration}</li>
+                <li><strong>Requirements:</strong> ${opportunity.requirements}</li>
+            </ul>
+            <button onclick="apply('${category}', '${opportunity.title}')">Apply Now</button>
+        `;
+        container.appendChild(card);
+    });
+}
+
+// Initial load
+document.addEventListener('DOMContentLoaded', filterOpportunities);
+
+function apply(category, opportunityTitle) {
+    const applicationPage = category === 'students' ? 'student-application.html' : 'alumni-application.html';
+    window.location.href = applicationPage;
+}
+
+
+    document.getElementById('student-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Collect form data
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const major = document.getElementById('major').value;
+
+        if (name && email && major) {
+            // Simulate form submission
+            alert('Application submitted successfully! We will contact you soon.');
+            
+            // Optionally clear the form
+            document.getElementById('student-form').reset();
+        } else {
+            alert('Please fill out all required fields.');
+        }
+    });
+
+    document.getElementById('student-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Collect form data
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const major = document.getElementById('major').value;
+        const resume = document.getElementById('resume').files[0];
+
+        // Simple validation
+        if (name && email && major && resume) {
+            // Display confirmation modal
+            showModal('Application Submitted', 'Thank you for applying! We have received your application and will review it soon.');
+
+            // Optionally clear the form
+            document.getElementById('student-form').reset();
+        } else {
+            alert('Please fill out all required fields and upload your resume.');
+        }
+    });
+
+    // Function to show a confirmation modal
+    function showModal(title, message) {
+        const modal = document.createElement('div');
+        modal.className = 'modal';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>${title}</h2>
+                <p>${message}</p>
+            </div>
+        `;
+        document.body.appendChild(modal);
+
+        // Close modal when clicking on close button
+        modal.querySelector('.close-button').addEventListener('click', function() {
+            document.body.removeChild(modal);
+        });
+
+        // Close modal when clicking outside the content
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                document.body.removeChild(modal);
+            }
+        });
+    }
+</script>
+
+
